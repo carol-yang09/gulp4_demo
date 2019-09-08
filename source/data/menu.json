@@ -1,0 +1,12 @@
+{
+  "list": [
+    {
+      "name": "首頁",
+      "url": "index.html"
+    },
+    {
+      "name": "觀光活動",
+      "url": "list.html"
+    }
+  ]
+}

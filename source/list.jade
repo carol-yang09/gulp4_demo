@@ -1,0 +1,30 @@
+extend _layout.jade
+
+block navbar
+  - var path = 'list.html'
+  include partials/_navbar.jade
+
+block content
+  .card-columns
+    each item in activeData.XML_Head.Infos.Info
+      .card
+        if item.Picture1
+          img.card-img-top(src='#{item.Picture1}')
+        else
+          img.card-img-top(src='images/activeImg.png')
+
+        .card-body
+          h5.card-title.mb-3 #{item.Name}
+
+          p.card-text.card-time
+
+          p.card-text.card-des
+            | #{item.Description}
+        
+        .card-footer.text-center
+          if item.Website
+            a(href="#{item.Website}", target="_blank").btn.btn-primary
+              | 前往網站
+          else
+            button(disabled).btn.btn-secondary
+              | 暫無網站
